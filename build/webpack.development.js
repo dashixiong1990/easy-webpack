@@ -3,7 +3,7 @@ const devServer = require('./modules/devServer')
 const loadCSS = require('./modules/loadCSS')
 
 module.exports = merge([
-	// webpack devserver
-	devServer(),
+  // webpack devserver
+  devServer(),
   loadCSS()
 ])

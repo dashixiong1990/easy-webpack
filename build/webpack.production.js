@@ -1,4 +1,2 @@
-const merge = require('webpack-merge')	
-module.exports = merge([
-
-])
+const merge = require('webpack-merge')
+module.exports = merge([])
