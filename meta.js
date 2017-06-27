@@ -1,4 +1,4 @@
-{
+module.exports = {
   "helpers": {
     "if_or": function (v1, v2, options) {
       if (v1 || v2) {
@@ -18,6 +18,7 @@
       "type": "string",
       "required": false,
       "message": "Project description",
+      "default": "A Vue.js project"
     },
     "author": {
       "type": "string",
