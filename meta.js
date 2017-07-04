@@ -18,7 +18,6 @@ module.exports = {
       "type": "string",
       "required": false,
       "message": "Project description",
-      "default": "A Vue.js project"
     },
     "author": {
       "type": "string",
@@ -29,11 +28,11 @@ module.exports = {
       "message": "项目规模",
       "choices": [
         {
-          name: "简单的专题页,无需后端",
+          "name": "简单的专题页,无需代理请求",
           "value": "simple",
         },
         {
-          name: "需要与后端连调，代理请求",
+          "name": "需要与后端连调，代理请求",
           "value": "complex",
         }
       ]
@@ -59,36 +58,17 @@ module.exports = {
       "message": "使用CSS预处理器?"
     },
     "preCSS": {
+      "when": "usePreCSS",
       "type": "list",
       "message": "使用哪种CSS预处理器",
       "choices": [
         {
-          name: "sass/scss",
+          "name": "scss",
           "value": "sass",
         },
         {
-          name: "less",
+          "name": "less",
           "value": "less",
-        },
-        {
-          name: "styl",
-          "value": "styl",
-        },
-      ]
-    },
-    "cssPosition": {
-      "type": "list",
-      "message": '生成后的CSS内容如何处理',
-      "choices": [
-        {
-          "name": "单独提取出一个文件 link标签引入",
-          "value": "link",
-          "short": "link"
-        },
-        {
-          "name": "style标签内联在html文件中",
-          "value": "style",
-          "short": "style"
         }
       ]
     },
@@ -122,11 +102,9 @@ module.exports = {
   "filters": {
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
-    "config/test.env.js": "unit || e2e",
-    "test/unit/**/*": "unit",
-    "build/webpack.test.conf.js": "unit",
-    "test/e2e/**/*": "e2e",
-    "src/router/**/*": "router"
+    "lintjavascript": "lint",
+    "build/modules/devServer.js": "projectScale == 'simple'",
+    "build/modules/proxyServer.js": "projectScale == 'complex'"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };

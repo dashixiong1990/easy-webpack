@@ -1,14 +1,18 @@
 {
-  "name": "easy-webpack-template",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "dependencies": {
-    "css-loader": "^0.28.4",
-    "style-loader": "^0.18.2",
-    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    {{#if_eq preCSS "sass"}}
+    "sass-loader": "^6.0.6",
+    "node-sass": "^4.5.3",
+    {{/if_eq}}
+    {{#if_eq preCSS "less"}}
+    "less-loader": "^4.0.4",
+    {{/if_eq}}
     "babel-eslint": "^7.2.3",
     "css-loader": "^0.28.4",
     "eslint": "^4.1.1",
@@ -24,12 +28,19 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2",
+    "postcss-loader": "^2.0.6"
   },
   "scripts": {
+    {{#if_eq projectScale "simple"}}
     "start": "NODE_ENV=development webpack-dev-server --env development",
+    {{/if_eq}}
+    {{#if_eq projectScale "complex"}}
+    "start": "NODE_ENV=development node build/modules/proxyServer",
+    {{/if_eq}}
     "build": "NODE_ENV=production webpack --env production"
   },
-  "author": "",
   "license": "ISC"
 }
