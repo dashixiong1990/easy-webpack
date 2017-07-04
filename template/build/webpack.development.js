@@ -1,9 +1,11 @@
 const merge = require('webpack-merge')
+{{#if_eq projectScale "simple"}}
 const devServer = require('./modules/devServer')
-const loadCSS = require('./modules/loadCSS')
+{{/if_eq}}
 
 module.exports = merge([
+  {{#if_eq projectScale "simple"}}
   // webpack devserver
-  devServer(),
-  loadCSS()
+  devServer
+  {{/if_eq}}
 ])

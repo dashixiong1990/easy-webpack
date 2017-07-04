@@ -15,4 +15,4 @@ module.exports = ({ include,exclude, options = defaultOptions }) => ({
       },
     ],
   },
-});
+})
