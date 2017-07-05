@@ -34,8 +34,5 @@ module.exports = ({ include, exclude } = {}) => {
       ]
     }
   }
-  if (process.env.NODE_ENV === 'production') {
-    defaults.plugins = [extractPlugin]
-  }
   return defaults
 }

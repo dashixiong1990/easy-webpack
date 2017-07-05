@@ -29,6 +29,7 @@ module.exports = merge([
   },
   loadCSS(),
   loadAssets(),
+  loadES6(),
   {{#lint}}
   lintJavaScript({ include: PATHS.src }),
   {{/lint}}
