@@ -26,12 +26,14 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "html-webpack-plugin": "^2.29.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.0.0",
+    "webpack": "^2.2.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0",
     "css-loader": "^0.28.4",
     "style-loader": "^0.18.2",
-    "postcss-loader": "^2.0.6"
+    "postcss-loader": "^2.0.6",
+    "autoprefixer": "^7.1.1",
+    "postcss-cssnext": "^3.0.0"
   },
   "scripts": {
     {{#if_eq projectScale "simple"}}
