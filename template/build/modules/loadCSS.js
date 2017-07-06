@@ -1,9 +1,9 @@
+const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const extractPlugin = new ExtractTextPlugin({
   filename: '[name].css',
 })
 const config = require('../../config/development.config')
-// const postcssPlugins = [...config.postcssPlugins,'autoprefixer'].map(item => `require(${item})`)
 const useCommon = [
   'css-loader',
   'postcss-loader'
@@ -30,7 +30,7 @@ module.exports = ({ include, exclude } = {}) => {
         },
         {{#usePreCSS}}
         {
-          include: [path.reslove(__dirname,'../../src')],
+          include: [path.join(__dirname,'../../src')],
           exclude,
           {{#if_eq preCSS "less"}}
           test: /\.less$/,
