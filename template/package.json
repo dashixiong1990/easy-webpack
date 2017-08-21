@@ -33,16 +33,17 @@
     "style-loader": "^0.18.2",
     "postcss-loader": "^2.0.6",
     "autoprefixer": "^7.1.1",
-    "postcss-cssnext": "^3.0.0"
+    "postcss-cssnext": "^3.0.0",
+    "cross-env": "^5.0.5"
   },
   "scripts": {
     {{#if_eq projectScale "simple"}}
-    "start": "NODE_ENV=development webpack-dev-server --env development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --env development",
     {{/if_eq}}
     {{#if_eq projectScale "complex"}}
-    "start": "NODE_ENV=development node build/modules/proxyServer",
+    "start": "cross-env NODE_ENV=development node build/modules/proxyServer",
     {{/if_eq}}
-    "build": "NODE_ENV=production webpack --env production"
+    "build": "cross-env NODE_ENV=production webpack --env production"
   },
   "license": "ISC"
 }
