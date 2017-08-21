@@ -37,6 +37,20 @@ module.exports = {
         }
       ]
     },
+    "pageAmount": {
+      "type": "list",
+      "message": "页面数量",
+      "choices": [
+        {
+          "name": "单页面应用",
+          "value": "single",
+        },
+        {
+          "name": "多页面应用",
+          "value": "multiple",
+        }
+      ]
+    },
     "compatibility": {
       "type": "list",
       "message": "浏览器兼容性",
