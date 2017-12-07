@@ -1,5 +1,5 @@
 # easy-webpack
 make webpack config easy
 
-under development
-Do not use in production
+## how to use
+vue init dashixong1990/easy-webpack
